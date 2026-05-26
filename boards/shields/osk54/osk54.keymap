@@ -57,7 +57,7 @@
             &kp GRAVE   &kp B     &kp Y     &kp O     &kp U     &kp SQT       &kp SEMI    &kp L     &kp D     &kp W     &kp V     &kp Z   
         // +-----------------------------------------------------------+     +-----------------------------------------------------------+
         // |         |   c     |   i     |   e     |   a     |   ,     |     |   .     |   h     |   t     |   s     |   n     |   q     |
-              &trans    &kp 1     &kp 2     &kp 3     &kp 4     &kp 5           &kp 6     &kp 7     &kp 8     &kp 9     &kp 0     &kp q   
+              &trans    &kp 1     &kp 2     &kp 3     &kp 4     &kp 5           &kp 6     &kp 7     &kp 8     &kp 9     &kp 0     &kp Q   
         // +-----------------------------------------------------------+     +-----------------------------------------------------------+
         // |  SHIFT  |   g     |   x     |   j     |   k     |   -     |     |   /     |   r     |   m     |   f     |   p     | RSHIFT  |
             &kp LSHIFT  &kp 1     &kp 2     &kp 3     &kp 4     &kp 5           &kp 6     &kp 7     &kp 8     &kp 9     &kp 0   &kp RSHIFT   

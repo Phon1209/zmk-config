@@ -1,2 +1,0 @@
-config SHIELD_KEEB_RIGHT_TEST
-    def_bool $(shields_list_contains,keeb_right_test)

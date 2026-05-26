@@ -1,6 +1,0 @@
-if SHIELD_KEEB_RIGHT_TEST
-
-config ZMK_KEYBOARD_NAME
-    default "keeb_right_test"
-
-endif # SHIELD_KEEB_RIGHT_TEST

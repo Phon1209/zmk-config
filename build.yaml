@@ -18,8 +18,3 @@
 #     artifact-name: corne_left_with_studio
 #
 ---
-include:
-  - board: seeeduino_xiao_ble//zmk
-    shield: OSK54_left
-  - board: seeeduino_xiao_ble//zmk
-    shield: OSK54_right

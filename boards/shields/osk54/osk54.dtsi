@@ -25,14 +25,14 @@
 
         // Replace these comments with the GPIO pins in the matrix.
         // See https://zmk.dev/docs/development/hardware-integration/new-shield#shield-overlays
-        col-gpios
-            = <&xiao_d 0 GPIO_ACTIVE_HIGH>   /* col 0 — extra pinky */
-            , <&xiao_d 1 GPIO_ACTIVE_HIGH>   /* col 1 — pinky       */
-            , <&xiao_d 2 GPIO_ACTIVE_HIGH>   /* col 2 — ring        */
-            , <&xiao_d 3 GPIO_ACTIVE_HIGH>   /* col 3 — middle      */
-            , <&xiao_d 4 GPIO_ACTIVE_HIGH>   /* col 4 — index       */
-            , <&xiao_d 5 GPIO_ACTIVE_HIGH>   /* col 5 — inner       */
-            ;
+//        col-gpios
+ //           = <&xiao_d 0 GPIO_ACTIVE_HIGH>   /* col 0 — extra pinky */
+ //           , <&xiao_d 1 GPIO_ACTIVE_HIGH>   /* col 1 — pinky       */
+ //           , <&xiao_d 2 GPIO_ACTIVE_HIGH>   /* col 2 — ring        */
+ //           , <&xiao_d 3 GPIO_ACTIVE_HIGH>   /* col 3 — middle      */
+ //           , <&xiao_d 4 GPIO_ACTIVE_HIGH>   /* col 4 — index       */
+ //           , <&xiao_d 5 GPIO_ACTIVE_HIGH>   /* col 5 — inner       */
+ //           ;
 
         row-gpios
             = <&xiao_d 9 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  /* row 0 — upper  */
@@ -47,7 +47,7 @@
         // See https://zmk.dev/docs/development/hardware-integration/new-shield#matrix-transform
         // for how to configure this
         compatible = "zmk,matrix-transform";
-        columns = <6>;
+        columns = <12>;
         rows = <5>;
 
         map = <

@@ -54,7 +54,7 @@
             &kp EQUAL   &kp 1     &kp 2     &kp 3     &kp 4     &kp 5           &kp 6     &kp 7     &kp 8     &kp 9     &kp 0     &kp BSLH   
         // +-----------------------------------------------------------+     +-----------------------------------------------------------+
         // |   `     |   b     |   y     |   o     |   u     |   '     |     |   ;     |   l     |   d     |   w     |   v     |   z     |
-            &kp GRAVE   &kp b     &kp y     &kp o     &kp u     &kp SQT       &kp SEMI    &kp l     &kp d     &kp w     &kp v     &kp z   
+            &kp GRAVE   &kp B     &kp Y     &kp O     &kp U     &kp SQT       &kp SEMI    &kp L     &kp D     &kp W     &kp V     &kp Z   
         // +-----------------------------------------------------------+     +-----------------------------------------------------------+
         // |         |   c     |   i     |   e     |   a     |   ,     |     |   .     |   h     |   t     |   s     |   n     |   q     |
               &trans    &kp 1     &kp 2     &kp 3     &kp 4     &kp 5           &kp 6     &kp 7     &kp 8     &kp 9     &kp 0     &kp q   

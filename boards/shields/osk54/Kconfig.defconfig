@@ -1,0 +1,16 @@
+if SHIELD_OSK54_LEFT
+
+config ZMK_KEYBOARD_NAME
+    default "OSK54"
+
+config ZMK_SPLIT_ROLE_CENTRAL
+    default y
+
+endif # SHIELD_OSK54_LEFT
+
+if SHIELD_OSK54_LEFT || SHIELD_OSK54_RIGHT
+
+config ZMK_SPLIT
+    default y
+
+endif # SHIELD_OSK54_LEFT || SHIELD_OSK54_RIGHT

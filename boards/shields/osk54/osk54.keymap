@@ -3101,66 +3101,6 @@ behaviors {
     };
     #define RightMiddyIndex right_middy_index_bilateral RIGHT_INDEX_MOD RIGHT_INDEX_KEY
 
-    //
-    // Key repetition access keys on the index fingers
-    //
-    plain: plain_typing_layer {
-        compatible = "zmk,behavior-hold-tap";
-        flavor = PLAIN_HOLDING_TYPE;
-        tapping-term-ms = <PLAIN_HOLDING_TIME>;
-        quick-tap-ms = <PLAIN_REPEAT_DECAY>; // enable repeat
-        require-prior-idle-ms = <PLAIN_STREAK_DECAY>;
-        #binding-cells = <2>;
-        bindings = <&mo>, <&kp>;
-        retro-tap; // tap on standalone hold
-    };
-    plain_engram_COMMA: plain_typing_layer_engram_COMMA {
-        compatible = "zmk,behavior-hold-tap";
-        flavor = PLAIN_HOLDING_TYPE;
-        tapping-term-ms = <PLAIN_HOLDING_TIME>;
-        quick-tap-ms = <PLAIN_REPEAT_DECAY>; // enable repeat
-        require-prior-idle-ms = <PLAIN_STREAK_DECAY>;
-        #binding-cells = <2>;
-        bindings = <&mo>, <&engram_COMMA>;
-        retro-tap; // tap on standalone hold
-    };
-    plain_engram_DOT: plain_typing_layer_engram_DOT {
-        compatible = "zmk,behavior-hold-tap";
-        flavor = PLAIN_HOLDING_TYPE;
-        tapping-term-ms = <PLAIN_HOLDING_TIME>;
-        quick-tap-ms = <PLAIN_REPEAT_DECAY>; // enable repeat
-        require-prior-idle-ms = <PLAIN_STREAK_DECAY>;
-        #binding-cells = <2>;
-        bindings = <&mo>, <&engram_DOT>;
-        retro-tap; // tap on standalone hold
-    };
-
-    //
-    // Thumb cluster hold-tap keys for Miryoku layers
-    //
-    thumb: thumb_layer_access {
-        compatible = "zmk,behavior-hold-tap";
-        flavor = THUMB_HOLDING_TYPE;
-        tapping-term-ms = <THUMB_HOLDING_TIME>;
-        quick-tap-ms = <THUMB_REPEAT_DECAY>; // enable repeat
-        #binding-cells = <2>;
-        bindings = <&mo>, <&kp>;
-    };
-    thumb_parang_left: thumb_layer_access_parang_left {
-        compatible = "zmk,behavior-hold-tap";
-        flavor = THUMB_HOLDING_TYPE;
-        tapping-term-ms = <THUMB_HOLDING_TIME>;
-        quick-tap-ms = <THUMB_REPEAT_DECAY>; // enable repeat
-        #binding-cells = <2>;
-        bindings = <&mo>, <&parang_left>;
-    };
-    thumb_lower_shift: lower_layer_or_sticky_shift {
-        compatible = "zmk,behavior-hold-tap";
-        flavor = "tap-preferred";
-        tapping-term-ms = <THUMB_HOLDING_TIME>;
-        #binding-cells = <2>;
-        bindings = <&mo>, <&sticky_key_oneshot>;
-    };
     space: thumb_layer_access_spacebar {
         compatible = "zmk,behavior-hold-tap";
         flavor = SPACE_HOLDING_TYPE;

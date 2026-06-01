@@ -3320,13 +3320,6 @@ macros {
         tap-ms = <SELECT_WORD_DELAY>;
         bindings = <&kp LS(UP) &kp LS(_HOME)>;
     )
-
-    emoji_gesture_hands: emoji_gesture_hands {
-        compatible = "zmk,behavior-mod-morph";
-        #binding-cells = <0>;
-        bindings = <&emoji_raised_hands>, <&emoji_gesture_hands_clap>;
-        mods = <MOD_LSFT>;
-    };
 };
 
 /*HACK*/};

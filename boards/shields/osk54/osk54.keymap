@@ -3389,6 +3389,12 @@ macros {
     };
 };
 
+/*HACK*/};
+
+/*HACK*//{
+
+};
+
 / {
     behaviors {
 

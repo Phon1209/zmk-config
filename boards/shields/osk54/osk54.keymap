@@ -3101,6 +3101,40 @@ behaviors {
     };
     #define RightMiddyIndex right_middy_index_bilateral RIGHT_INDEX_MOD RIGHT_INDEX_KEY
 
+
+    //
+    // Key repetition access keys on the index fingers
+    //
+    plain: plain_typing_layer {
+        compatible = "zmk,behavior-hold-tap";
+        flavor = PLAIN_HOLDING_TYPE;
+        tapping-term-ms = <PLAIN_HOLDING_TIME>;
+        quick-tap-ms = <PLAIN_REPEAT_DECAY>; // enable repeat
+        require-prior-idle-ms = <PLAIN_STREAK_DECAY>;
+        #binding-cells = <2>;
+        bindings = <&mo>, <&kp>;
+        retro-tap; // tap on standalone hold
+    };
+    plain_engram_COMMA: plain_typing_layer_engram_COMMA {
+        compatible = "zmk,behavior-hold-tap";
+        flavor = PLAIN_HOLDING_TYPE;
+        tapping-term-ms = <PLAIN_HOLDING_TIME>;
+        quick-tap-ms = <PLAIN_REPEAT_DECAY>; // enable repeat
+        require-prior-idle-ms = <PLAIN_STREAK_DECAY>;
+        #binding-cells = <2>;
+        bindings = <&mo>, <&engram_COMMA>;
+        retro-tap; // tap on standalone hold
+    };
+    plain_engram_DOT: plain_typing_layer_engram_DOT {
+        compatible = "zmk,behavior-hold-tap";
+        flavor = PLAIN_HOLDING_TYPE;
+        tapping-term-ms = <PLAIN_HOLDING_TIME>;
+        quick-tap-ms = <PLAIN_REPEAT_DECAY>; // enable repeat
+        require-prior-idle-ms = <PLAIN_STREAK_DECAY>;
+        #binding-cells = <2>;
+        bindings = <&mo>, <&engram_DOT>;
+        retro-tap; // tap on standalone hold
+    };
     space: thumb_layer_access_spacebar {
         compatible = "zmk,behavior-hold-tap";
         flavor = SPACE_HOLDING_TYPE;
@@ -3361,11 +3395,27 @@ macros {
         // +-----------------------------------------------------------+     +-----------------------------------------------------------+
             >;
         };
-   //     layer_Engrammer {
-   //         display-name = "Engrammer";
-   //         bindings = <
- //// &magic LAYER_Magic 0  
-   //         >;
-   //     }
+        
+        // TODO: Change &trans to QWERTY layout for Thai
+        Layer_Kedmanee {
+            bindings = <
+             &trans              &trans              &trans              &trans              &trans         &trans                                                                                                            &trans               &trans               &trans               &trans               &trans  &trans
+             &trans              &trans              &trans              &trans              &trans         &trans                                                                                                            &trans               &trans               &trans               &trans               &trans  &trans
+             &trans              &trans              &trans              &trans              &trans         &trans                                                                                                            &trans               &trans               &trans               &trans               &trans  &trans
+             &trans              &trans              &trans              &trans              &trans         &trans                                                                                                            &trans               &trans               &trans               &trans               &trans  &trans
+                                                                         &trans              &trans         &trans                                                                                                            &trans               &trans               &trans                                                  
+            >;
+        };
+
+        layer_Typing {
+            bindings = <
+             &trans              &trans              &trans              &trans              &trans         &trans                                                                                                            &trans               &trans               &trans               &trans               &trans  &trans
+             &trans              &trans  &kp LEFT_RING2_KEY              &trans              &trans         &trans                                                                                                            &trans               &trans               &trans  &kp RIGHT_RING2_KEY               &trans  &trans
+             &trans  &kp LEFT_PINKY_KEY  &kp LEFT_RING1_KEY  &kp LEFT_MIDDY_KEY  &kp LEFT_INDEX_KEY  &LeftPlainKey                                                                                                    &RightPlainKey  &kp RIGHT_INDEX_KEY  &kp RIGHT_MIDDY_KEY  &kp RIGHT_RING1_KEY  &kp RIGHT_PINKY_KEY  &trans
+             &trans              &trans              &trans              &trans              &trans         &trans                                                                                                            &trans               &trans               &trans               &trans               &trans  &trans
+                                                                         &trans              &trans         &trans                                                                                                            &trans               &trans               &trans                                                  
+            >;
+        };
+
     };
 };

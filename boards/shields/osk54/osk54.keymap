@@ -3135,6 +3135,14 @@ behaviors {
         bindings = <&mo>, <&engram_DOT>;
         retro-tap; // tap on standalone hold
     };
+    thumb: thumb_layer_access {
+        compatible = "zmk,behavior-hold-tap";
+        flavor = THUMB_HOLDING_TYPE;
+        tapping-term-ms = <THUMB_HOLDING_TIME>;
+        quick-tap-ms = <THUMB_REPEAT_DECAY>; // enable repeat
+        #binding-cells = <2>;
+        bindings = <&mo>, <&kp>;
+    };
     space: thumb_layer_access_spacebar {
         compatible = "zmk,behavior-hold-tap";
         flavor = SPACE_HOLDING_TYPE;

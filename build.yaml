@@ -24,4 +24,4 @@ include:
   - board: seeeduino_xiao_ble
     shield: osk54_right
   - board: seeeduino_xiao_ble
-    sheild: settings_reset
+    shield: settings_reset

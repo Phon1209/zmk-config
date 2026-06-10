@@ -298,7 +298,9 @@ combos {
 // ╔═══════════════════════════════════════════════════════════════════════════╗
 // ║ Bluetooth/USB Output section                                              ║
 // ╚═══════════════════════════════════════════════════════════════════════════╝
-
+#define usb_out out OUT_USB
+#define bl_clr bt BT_CLR
+#define bl_clra bt BT_CLR_ALL
 
 macros {
     bt_0: bt_0 {
@@ -333,11 +335,6 @@ macros {
             = <&out OUT_BLE>,
                 <&bt BT_SEL 3>;
     };
-
-    #define usb_out out OUT_USB
-
-    #define bl_clr bt BT_CLR
-    #define bl_clra bt BT_CLR_ALL
 };
 
 
@@ -352,27 +349,25 @@ macros {
             bindings = <&mo>, <&rgb_ug_status_macro>;
         };
     };
-
-    combos {
-        compatible = "zmk,combos";
-
-        magic_combo_toggle_left {
-            timeout-ms = <300>;
-            key-positions = <12 24>;
-            bindings = <&tog LAYER_Magic>;
-            layers = <LAYER_Engrammer LAYER_KEDMANEE_TH LAYER_Magic>;
-        };
-
-        magic_combo_toggle_right {
-            timeout-ms = <300>;
-            key-positions = <23 35>;
-            bindings = <&tog LAYER_Magic>;
-            layers = <LAYER_Engrammer LAYER_KEDMANEE_TH LAYER_Magic>;
-        };
-
-    };
 };
 
+combos {
+    compatible = "zmk,combos";
+
+    magic_combo_toggle_left {
+        timeout-ms = <300>;
+        key-positions = <12 24>;
+        bindings = <&tog LAYER_Magic>;
+        layers = <LAYER_Engrammer LAYER_KEDMANEE_TH LAYER_Magic>;
+    };
+
+    magic_combo_toggle_right {
+        timeout-ms = <300>;
+        key-positions = <23 35>;
+        bindings = <&tog LAYER_Magic>;
+        layers = <LAYER_Engrammer LAYER_KEDMANEE_TH LAYER_Magic>;
+    };
+};
 
 behaviors {
 

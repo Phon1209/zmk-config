@@ -295,6 +295,66 @@ combos {
 };
 
 
+// ╔═══════════════════════════════════════════════════════════════════════════╗
+// ║ Bluetooth/USB Output section                                              ║
+// ╚═══════════════════════════════════════════════════════════════════════════╝
+
+
+macros {
+    bt_0: bt_0 {
+        label = "BT_0";
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings
+            = <&out OUT_BLE>,
+                <&bt BT_SEL 0>;
+    };
+    bt_1: bt_1 {
+        label = "BT_1";
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings
+            = <&out OUT_BLE>,
+                <&bt BT_SEL 1>;
+    };
+    bt_2: bt_2 {
+        label = "BT_2";
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings
+            = <&out OUT_BLE>,
+                <&bt BT_SEL 2>;
+    };
+    bt_3: bt_3 {
+        label = "BT_3";
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings
+            = <&out OUT_BLE>,
+                <&bt BT_SEL 3>;
+    };
+
+    #define &usb_out &out OUT_USB
+
+    #define &bl_clr &bt BT_CLR
+    #define &bl_clra &bt BT_CLR_ALL
+};
+
+
+/ {
+    behaviors {
+        magic: magic {
+            compatible = "zmk,behavior-hold-tap";
+            label = "MAGIC_HOLD_TAP";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&mo>, <&rgb_ug_status_macro>;
+        };
+    };
+};
+
+
 behaviors {
 
     //////////////////////////////////////////////////////////////////////////
@@ -3768,16 +3828,16 @@ macros {
               &none     &none     &none     &none     &none     &none           &none     &none     &none     &none     &none     &none   
         // +-----------------------------------------------------------+     +-----------------------------------------------------------+
         // |         |         |         |         |         |         |     |         |         |         |         |         |         |
-              &none     &none     &none     &none     &none     &none           &none     &none     &none     &none     &none     &none   
+              &none     &none     &none    &bl_clr  &bl_clra    &none           &none     &none    &bl_clr  &bl_clra    &none     &none   
         // +-----------------------------------------------------------+     +-----------------------------------------------------------+
         // |         |         |         |         |         |         |     |         |         |         |         |         |         |
-              &none     &none     &none     &none     &none     &none           &none     &none     &none     &none     &none     &none   
+              &none     &none     &bt_3   &usb_out    &none     &none           &none     &bt_3     &none     &none     &none     &none   
         // +-----------------------------------------------------------+     +-----------------------------------------------------------+
         // |         |         |         |         |         |         |     |         |         |         |         |         |         |
-              &none     &none     &none     &none     &none     &none           &none     &none     &none     &none     &none     &none   
+              &none     &none     &bt_0     &bt_1     &bt_2     &none           &none     &bt_0     &bt_1     &bt_2     &none     &none   
         // +-----------------------------------------------------------+     +-----------------------------------------------------------+
         // |                             |         |         |         |     |         |         |         |                             |
-                                            &none     &none     &none           &none     &none     &none                                 
+                                            &none     &none     &none           &none   &usb_out    &none                                 
         // +-----------------------------------------------------------+     +-----------------------------------------------------------+
             >;
         };

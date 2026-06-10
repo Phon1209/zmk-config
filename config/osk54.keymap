@@ -334,10 +334,10 @@ macros {
                 <&bt BT_SEL 3>;
     };
 
-    #define &usb_out &out OUT_USB
+    #define usb_out out OUT_USB
 
-    #define &bl_clr &bt BT_CLR
-    #define &bl_clra &bt BT_CLR_ALL
+    #define bl_clr bt BT_CLR
+    #define bl_clra bt BT_CLR_ALL
 };
 
 

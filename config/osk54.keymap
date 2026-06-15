@@ -3826,7 +3826,7 @@ macros {
             &kp HASH  &kp CARET &kp EQUAL &kp UNDER &kp DOLLAR &kp STAR       &kp COMMA &kp BACKSPACE &kp TAB &kp SPACE &kp ENTER &none // TODO: Change this
         // +-----------------------------------------------------------+     +-----------------------------------------------------------+
         // |    @    |    <    |   |     |    -    |    >    |    /    |     |    ;    |  shift  |    +    |    &    |         |         |
-            &kp LS(N2) &kp LT   &kp PIPE  &kp MINUS &kp GT    &kp FSLH        &kp SEMI &kp LEFT_SHIFT &kp PLUS &kp AMPS & none & none
+            &kp LS(N2) &kp LT   &kp PIPE  &kp MINUS &kp GT    &kp FSLH        &kp SEMI &kp LEFT_SHIFT &kp PLUS &kp AMPS &none    &none
         // +-----------------------------------------------------------+     +-----------------------------------------------------------+
         // |                             |   \     |    %    |    :    |     |         |         |         |                             |
                                           &kp BSLH  &kp PERCENT &kp COLON     &none     &none     &none

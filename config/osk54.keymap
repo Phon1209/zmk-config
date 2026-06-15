@@ -3734,215 +3734,262 @@
     };
     // Define a default keymap here.
     // See https://zmk.dev/docs/development/hardware-integration/new-shield#default-keymap.
-    keymap
-    {
+    keymap {
         compatible = "zmk,keymap";
 
         // ╔═════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗
         // ║ LAYER 0 — BASE (Engrammer)   Home-row mods: Left GUI ALT CTL SFT  |  Right SFT CTL ALT GUI                    ║
         // ╚═════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝
-        default_layer
-        {
-            display - name = "Base";
+        default_layer {
+            display-name = "Base";
             bindings = <
-                // +-----------------------------------------------------------+     +-----------------------------------------------------------+
-                // |   =     |   1     |   2     |   3     |   4     |   5     |     |   6     |   7     |   8     |   9     |   0     |   \     |
-                &kp EQUAL & kp N1 & kp N2 & kp N3 & kp N4 & kp N5 & kp N6 & kp N7 & kp N8 & kp N9 & kp N0 & kp BSLH
-                // +-----------------------------------------------------------+     +-----------------------------------------------------------+
-                // |   `     |   b     |   y     |   o     |   u     |   '     |     |   ;     |   l     |   d     |   w     |   v     |   z     |
-                & kp GRAVE & kp B & LeftRing2(Y, LAYER_Engrammer) & kp O & kp U & kp SQT & kp SEMI & kp L & kp D & RightRing2(W, LAYER_Engrammer) & kp V & kp Z
-                // +-----------------------------------------------------------+     +-----------------------------------------------------------+
-                // | CAPWORD |  hm c   |  hm i   |  hm e   |  hm a   |   ,     |     |   .     |  hm h   |  hm t   |  hm s   |  hm n   |   q     |
-                & caps_word & LeftPinky(C, LAYER_Engrammer) & LeftRing1(I, LAYER_Engrammer) & LeftMiddy(E, LAYER_Engrammer) & LeftIndex(A, LAYER_Engrammer) & plain LAYER_Typing COMMA & plain LAYER_Typing DOT & RightIndex(H, LAYER_Engrammer) & RightMiddy(T, LAYER_Engrammer) & RightRing1(S, LAYER_Engrammer) & RightPinky(N, LAYER_Engrammer) & kp Q
-                // +-----------------------------------------------------------+     +-----------------------------------------------------------+
-                // |  LSHIFT |   g     |   x     |   j     |   k     |   -     |     |   /     |   r     |   m     |   f     |   p     | RSHIFT  |
-                & kp LSHFT & kp G & kp X & kp J & kp K & kp MINUS & kp FSLH & kp R & kp M & kp F & kp P & kp RSHFT
-                // +-----------------------------------------------------------+     +-----------------------------------------------------------+
-                // |                             |   ESC   |  BKSP    |  DEL   |     |  TAB    |  SPACE  |  ENTER  |                             |
-                & thumb LAYER_Function ESC & thumb LAYER_Cursor BACKSPACE & thumb LAYER_Number DELETE & thumb LAYER_Magic TAB & space LAYER_Symbol SPACE & kp RET
-                // +-----------------------------------------------------------+     +-----------------------------------------------------------+
-                >;
+        // +-----------------------------------------------------------+     +-----------------------------------------------------------+
+        // |   =     |   1     |   2     |   3     |   4     |   5     |     |   6     |   7     |   8     |   9     |   0     |   \     |
+            &kp EQUAL   &kp N1    &kp N2    &kp N3    &kp N4    &kp N5          &kp N6    &kp N7    &kp N8    &kp N9    &kp N0    &kp BSLH   
+        // +-----------------------------------------------------------+     +-----------------------------------------------------------+
+        // |   `     |   b     |   y     |   o     |   u     |   '     |     |   ;     |   l     |   d     |   w     |   v     |   z     |
+            &kp GRAVE   &kp B  &LeftRing2 (Y, LAYER_Engrammer) &kp O  &kp U  &kp SQT        &kp SEMI &kp L &kp D  &RightRing2 (W, LAYER_Engrammer) &kp V &kp Z
+        // +-----------------------------------------------------------+     +-----------------------------------------------------------+
+        // | CAPWORD |  hm c   |  hm i   |  hm e   |  hm a   |   ,     |     |   .     |  hm h   |  hm t   |  hm s   |  hm n   |   q     |
+           &caps_word &LeftPinky (C, LAYER_Engrammer)  &LeftRing1 (I, LAYER_Engrammer)  &LeftMiddy (E, LAYER_Engrammer)  &LeftIndex (A, LAYER_Engrammer)  &plain LAYER_Typing COMMA  &plain LAYER_Typing DOT  &RightIndex (H, LAYER_Engrammer)  &RightMiddy (T, LAYER_Engrammer)  &RightRing1 (S, LAYER_Engrammer)  &RightPinky (N, LAYER_Engrammer) &kp Q
+        // +-----------------------------------------------------------+     +-----------------------------------------------------------+
+        // |  LSHIFT |   g     |   x     |   j     |   k     |   -     |     |   /     |   r     |   m     |   f     |   p     | RSHIFT  |
+            &kp LSHFT   &kp G     &kp X     &kp J     &kp K     &kp MINUS      &kp FSLH   &kp R     &kp M     &kp F     &kp P   &kp RSHFT
+        // +-----------------------------------------------------------+     +-----------------------------------------------------------+
+        // |                             |   ESC   |  BKSP    |  DEL   |     |  TAB    |  SPACE  |  ENTER  |                             |
+&thumb LAYER_Function ESC  &thumb LAYER_Cursor BACKSPACE  &thumb LAYER_Number DELETE        &thumb LAYER_Magic TAB  &space LAYER_Symbol SPACE   &kp RET       
+        // +-----------------------------------------------------------+     +-----------------------------------------------------------+
+            >;
         };
-
+        
         // TODO: Change &trans to QWERTY layout for Thai
-        Layer_Kedmanee
-        {
+        Layer_Kedmanee {
             bindings = <
-                &trans & trans & trans & trans & trans & trans & trans & trans & trans & trans & trans & trans & trans & trans & trans & trans & trans & trans & trans & trans & trans & trans & trans & trans & trans & trans & trans & trans & trans & trans & trans & trans & trans & trans & trans & trans & trans & trans & trans & trans & trans & trans & trans & trans & trans & trans & trans & trans & trans & trans & trans & trans & trans & trans>;
+             &trans              &trans              &trans              &trans              &trans         &trans                                                                                                            &trans               &trans               &trans               &trans               &trans  &trans
+             &trans              &trans              &trans              &trans              &trans         &trans                                                                                                            &trans               &trans               &trans               &trans               &trans  &trans
+             &trans              &trans              &trans              &trans              &trans         &trans                                                                                                            &trans               &trans               &trans               &trans               &trans  &trans
+             &trans              &trans              &trans              &trans              &trans         &trans                                                                                                            &trans               &trans               &trans               &trans               &trans  &trans
+                                                                         &trans              &trans         &trans                                                                                                            &trans               &trans               &trans                                                  
+            >;
         };
 
-        layer_Typing
-        {
+        layer_Typing {
             bindings = <
-                &trans & trans & trans & trans & trans & trans & trans & trans & trans & trans & trans & trans & trans & trans & kp LEFT_RING2_KEY & trans & trans & trans & trans & trans & trans & kp RIGHT_RING2_KEY & trans & trans & trans & kp LEFT_PINKY_KEY & kp LEFT_RING1_KEY & kp LEFT_MIDDY_KEY & kp LEFT_INDEX_KEY & LeftPlainKey & RightPlainKey & kp RIGHT_INDEX_KEY & kp RIGHT_MIDDY_KEY & kp RIGHT_RING1_KEY & kp RIGHT_PINKY_KEY & trans & trans & trans & trans & trans & trans & trans & trans & trans & trans & trans & trans & trans & trans & trans & trans & trans & trans & trans>;
+             &trans              &trans              &trans              &trans              &trans         &trans                                                                                                            &trans               &trans               &trans               &trans               &trans  &trans
+             &trans              &trans  &kp LEFT_RING2_KEY              &trans              &trans         &trans                                                                                                            &trans               &trans               &trans  &kp RIGHT_RING2_KEY               &trans  &trans
+             &trans  &kp LEFT_PINKY_KEY  &kp LEFT_RING1_KEY  &kp LEFT_MIDDY_KEY  &kp LEFT_INDEX_KEY  &LeftPlainKey                                                                                                    &RightPlainKey  &kp RIGHT_INDEX_KEY  &kp RIGHT_MIDDY_KEY  &kp RIGHT_RING1_KEY  &kp RIGHT_PINKY_KEY  &trans
+             &trans              &trans              &trans              &trans              &trans         &trans                                                                                                            &trans               &trans               &trans               &trans               &trans  &trans
+                                                                         &trans              &trans         &trans                                                                                                            &trans               &trans               &trans                                                  
+            >;
         };
 
-        layer_LeftPinky
-        {
+        
+        layer_LeftPinky {
             bindings = <
-                &left_pinky_tap KEY_LH_C6R1 & left_pinky_tap KEY_LH_C5R1 & left_pinky_tap KEY_LH_C4R1 & left_pinky_tap KEY_LH_C3R1 & left_pinky_tap KEY_LH_C2R1 & left_pinky_tap KEY_LH_C1R1 & trans & trans & trans & trans & trans & trans & left_pinky_tap KEY_LH_C6R2 & left_pinky_tap KEY_LH_C5R2 & LeftPinkyRing2 & left_pinky_tap KEY_LH_C3R2 & left_pinky_tap KEY_LH_C2R2 & left_pinky_tap KEY_LH_C1R2 & trans & trans & trans & kp RIGHT_RING2_KEY & trans & trans & left_pinky_tap KEY_LH_C6R3 & none & LeftPinkyRing1 & LeftPinkyMiddy & LeftPinkyIndex & left_pinky_tap KEY_LH_C1R3 & RightPlainKey & kp RIGHT_INDEX_KEY & kp RIGHT_MIDDY_KEY & kp RIGHT_RING1_KEY & kp RIGHT_PINKY_KEY & trans & left_pinky_tap KEY_LH_C6R4 & left_pinky_tap KEY_LH_C5R4 & left_pinky_tap KEY_LH_C4R4 & left_pinky_tap KEY_LH_C3R4 & left_pinky_tap KEY_LH_C2R4 & left_pinky_tap KEY_LH_C1R4 & trans & trans & trans & trans & trans & trans & trans & trans & trans & trans & trans & trans>;
+ &left_pinky_tap KEY_LH_C6R1  &left_pinky_tap KEY_LH_C5R1  &left_pinky_tap KEY_LH_C4R1  &left_pinky_tap KEY_LH_C3R1  &left_pinky_tap KEY_LH_C2R1  &left_pinky_tap KEY_LH_C1R1                                                          &trans               &trans               &trans               &trans               &trans  &trans
+ &left_pinky_tap KEY_LH_C6R2  &left_pinky_tap KEY_LH_C5R2              &LeftPinkyRing2  &left_pinky_tap KEY_LH_C3R2  &left_pinky_tap KEY_LH_C2R2  &left_pinky_tap KEY_LH_C1R2                                                          &trans               &trans               &trans  &kp RIGHT_RING2_KEY               &trans  &trans
+ &left_pinky_tap KEY_LH_C6R3                        &none              &LeftPinkyRing1              &LeftPinkyMiddy              &LeftPinkyIndex  &left_pinky_tap KEY_LH_C1R3                                                  &RightPlainKey  &kp RIGHT_INDEX_KEY  &kp RIGHT_MIDDY_KEY  &kp RIGHT_RING1_KEY  &kp RIGHT_PINKY_KEY  &trans
+ &left_pinky_tap KEY_LH_C6R4  &left_pinky_tap KEY_LH_C5R4  &left_pinky_tap KEY_LH_C4R4  &left_pinky_tap KEY_LH_C3R4  &left_pinky_tap KEY_LH_C2R4  &left_pinky_tap KEY_LH_C1R4                                                          &trans               &trans               &trans               &trans               &trans  &trans
+                                                                                                                                                                               &trans  &trans  &trans  &trans  &trans  &trans                                                                                                            
+            >;
         };
 
-        layer_LeftRing1
-        {
+        layer_LeftRing1 {
             bindings = <
-                &left_ring1_tap KEY_LH_C6R1 & left_ring1_tap KEY_LH_C5R1 & left_ring1_tap KEY_LH_C4R1 & left_ring1_tap KEY_LH_C3R1 & left_ring1_tap KEY_LH_C2R1 & left_ring1_tap KEY_LH_C1R1 & trans & trans & trans & trans & trans & trans & left_ring1_tap KEY_LH_C6R2 & left_ring1_tap KEY_LH_C5R2 & LeftPinkyRing2 & left_ring1_tap KEY_LH_C3R2 & left_ring1_tap KEY_LH_C2R2 & left_ring1_tap KEY_LH_C1R2 & trans & trans & trans & kp RIGHT_RING2_KEY & trans & trans & left_ring1_tap KEY_LH_C6R3 & none & LeftPinkyRing1 & LeftPinkyMiddy & LeftPinkyIndex & left_ring1_tap KEY_LH_C1R3 & RightPlainKey & kp RIGHT_INDEX_KEY & kp RIGHT_MIDDY_KEY & kp RIGHT_RING1_KEY & kp RIGHT_PINKY_KEY & trans & left_ring1_tap KEY_LH_C6R4 & left_ring1_tap KEY_LH_C5R4 & left_ring1_tap KEY_LH_C4R4 & left_ring1_tap KEY_LH_C3R4 & left_ring1_tap KEY_LH_C2R4 & left_ring1_tap KEY_LH_C1R4 & trans & trans & trans & trans & trans & trans & trans & trans & trans & trans & trans & trans>;
+ &left_ring1_tap KEY_LH_C6R1  &left_ring1_tap KEY_LH_C5R1  &left_ring1_tap KEY_LH_C4R1  &left_ring1_tap KEY_LH_C3R1  &left_ring1_tap KEY_LH_C2R1  &left_ring1_tap KEY_LH_C1R1                                                          &trans               &trans               &trans               &trans               &trans  &trans
+ &left_ring1_tap KEY_LH_C6R2  &left_ring1_tap KEY_LH_C5R2              &LeftPinkyRing2  &left_ring1_tap KEY_LH_C3R2  &left_ring1_tap KEY_LH_C2R2  &left_ring1_tap KEY_LH_C1R2                                                          &trans               &trans               &trans  &kp RIGHT_RING2_KEY               &trans  &trans
+ &left_ring1_tap KEY_LH_C6R3                        &none              &LeftPinkyRing1              &LeftPinkyMiddy              &LeftPinkyIndex  &left_ring1_tap KEY_LH_C1R3                                                  &RightPlainKey  &kp RIGHT_INDEX_KEY  &kp RIGHT_MIDDY_KEY  &kp RIGHT_RING1_KEY  &kp RIGHT_PINKY_KEY  &trans
+ &left_ring1_tap KEY_LH_C6R4  &left_ring1_tap KEY_LH_C5R4  &left_ring1_tap KEY_LH_C4R4  &left_ring1_tap KEY_LH_C3R4  &left_ring1_tap KEY_LH_C2R4  &left_ring1_tap KEY_LH_C1R4                                                          &trans               &trans               &trans               &trans               &trans  &trans
+                                                                                                                                                                               &trans  &trans  &trans  &trans  &trans  &trans                                                                                                            
+            >;
         };
 
-        layer_LeftRing2
-        {
+        layer_LeftRing2 {
             bindings = <
-                &left_ring2_tap KEY_LH_C6R1 & left_ring2_tap KEY_LH_C5R1 & left_ring2_tap KEY_LH_C4R1 & left_ring2_tap KEY_LH_C3R1 & left_ring2_tap KEY_LH_C2R1 & left_ring2_tap KEY_LH_C1R1 & trans & trans & trans & trans & trans & trans & left_ring2_tap KEY_LH_C6R2 & left_ring2_tap KEY_LH_C5R2 & LeftPinkyRing2 & left_ring2_tap KEY_LH_C3R2 & left_ring2_tap KEY_LH_C2R2 & left_ring2_tap KEY_LH_C1R2 & trans & trans & trans & kp RIGHT_RING2_KEY & trans & trans & left_ring2_tap KEY_LH_C6R3 & none & LeftPinkyRing1 & LeftPinkyMiddy & LeftPinkyIndex & left_ring2_tap KEY_LH_C1R3 & RightPlainKey & kp RIGHT_INDEX_KEY & kp RIGHT_MIDDY_KEY & kp RIGHT_RING1_KEY & kp RIGHT_PINKY_KEY & trans & left_ring2_tap KEY_LH_C6R4 & left_ring2_tap KEY_LH_C5R4 & left_ring2_tap KEY_LH_C4R4 & left_ring2_tap KEY_LH_C3R4 & left_ring2_tap KEY_LH_C2R4 & left_ring2_tap KEY_LH_C1R4 & trans & trans & trans & trans & trans & trans & trans & trans & trans & trans & trans & trans>;
+ &left_ring2_tap KEY_LH_C6R1  &left_ring2_tap KEY_LH_C5R1  &left_ring2_tap KEY_LH_C4R1  &left_ring2_tap KEY_LH_C3R1  &left_ring2_tap KEY_LH_C2R1  &left_ring2_tap KEY_LH_C1R1                                                          &trans               &trans               &trans               &trans               &trans  &trans
+ &left_ring2_tap KEY_LH_C6R2  &left_ring2_tap KEY_LH_C5R2              &LeftPinkyRing2  &left_ring2_tap KEY_LH_C3R2  &left_ring2_tap KEY_LH_C2R2  &left_ring2_tap KEY_LH_C1R2                                                          &trans               &trans               &trans  &kp RIGHT_RING2_KEY               &trans  &trans
+ &left_ring2_tap KEY_LH_C6R3                        &none              &LeftPinkyRing1              &LeftPinkyMiddy              &LeftPinkyIndex  &left_ring2_tap KEY_LH_C1R3                                                  &RightPlainKey  &kp RIGHT_INDEX_KEY  &kp RIGHT_MIDDY_KEY  &kp RIGHT_RING1_KEY  &kp RIGHT_PINKY_KEY  &trans
+ &left_ring2_tap KEY_LH_C6R4  &left_ring2_tap KEY_LH_C5R4  &left_ring2_tap KEY_LH_C4R4  &left_ring2_tap KEY_LH_C3R4  &left_ring2_tap KEY_LH_C2R4  &left_ring2_tap KEY_LH_C1R4                                                          &trans               &trans               &trans               &trans               &trans  &trans
+                                                                                                                                                                               &trans  &trans  &trans  &trans  &trans  &trans                                                                                                            
+            >;
         };
 
-        layer_LeftMiddy
-        {
+        layer_LeftMiddy {
             bindings = <
-                &left_middy_tap KEY_LH_C6R1 & left_middy_tap KEY_LH_C5R1 & left_middy_tap KEY_LH_C4R1 & left_middy_tap KEY_LH_C3R1 & left_middy_tap KEY_LH_C2R1 & left_middy_tap KEY_LH_C1R1 & trans & trans & trans & trans & trans & trans & left_middy_tap KEY_LH_C6R2 & left_middy_tap KEY_LH_C5R2 & LeftPinkyRing2 & left_middy_tap KEY_LH_C3R2 & left_middy_tap KEY_LH_C2R2 & left_middy_tap KEY_LH_C1R2 & trans & trans & trans & kp RIGHT_RING2_KEY & trans & trans & left_middy_tap KEY_LH_C6R3 & none & LeftPinkyRing1 & LeftPinkyMiddy & LeftPinkyIndex & left_middy_tap KEY_LH_C1R3 & RightPlainKey & kp RIGHT_INDEX_KEY & kp RIGHT_MIDDY_KEY & kp RIGHT_RING1_KEY & kp RIGHT_PINKY_KEY & trans & left_middy_tap KEY_LH_C6R4 & left_middy_tap KEY_LH_C5R4 & left_middy_tap KEY_LH_C4R4 & left_middy_tap KEY_LH_C3R4 & left_middy_tap KEY_LH_C2R4 & left_middy_tap KEY_LH_C1R4 & trans & trans & trans & trans & trans & trans & trans & trans & trans & trans & trans & trans>;
+ &left_middy_tap KEY_LH_C6R1  &left_middy_tap KEY_LH_C5R1  &left_middy_tap KEY_LH_C4R1  &left_middy_tap KEY_LH_C3R1  &left_middy_tap KEY_LH_C2R1  &left_middy_tap KEY_LH_C1R1                                                          &trans               &trans               &trans               &trans               &trans  &trans
+ &left_middy_tap KEY_LH_C6R2  &left_middy_tap KEY_LH_C5R2              &LeftPinkyRing2  &left_middy_tap KEY_LH_C3R2  &left_middy_tap KEY_LH_C2R2  &left_middy_tap KEY_LH_C1R2                                                          &trans               &trans               &trans  &kp RIGHT_RING2_KEY               &trans  &trans
+ &left_middy_tap KEY_LH_C6R3                        &none              &LeftPinkyRing1              &LeftPinkyMiddy              &LeftPinkyIndex  &left_middy_tap KEY_LH_C1R3                                                  &RightPlainKey  &kp RIGHT_INDEX_KEY  &kp RIGHT_MIDDY_KEY  &kp RIGHT_RING1_KEY  &kp RIGHT_PINKY_KEY  &trans
+ &left_middy_tap KEY_LH_C6R4  &left_middy_tap KEY_LH_C5R4  &left_middy_tap KEY_LH_C4R4  &left_middy_tap KEY_LH_C3R4  &left_middy_tap KEY_LH_C2R4  &left_middy_tap KEY_LH_C1R4                                                          &trans               &trans               &trans               &trans               &trans  &trans
+                                                                                                                                                                               &trans  &trans  &trans  &trans  &trans  &trans                                                                                                            
+            >;
         };
 
-        layer_LeftIndex
-        {
+        layer_LeftIndex {
             bindings = <
-                &left_index_tap KEY_LH_C6R1 & left_index_tap KEY_LH_C5R1 & left_index_tap KEY_LH_C4R1 & left_index_tap KEY_LH_C3R1 & left_index_tap KEY_LH_C2R1 & left_index_tap KEY_LH_C1R1 & trans & trans & trans & trans & trans & trans & left_index_tap KEY_LH_C6R2 & left_index_tap KEY_LH_C5R2 & LeftPinkyRing2 & left_index_tap KEY_LH_C3R2 & left_index_tap KEY_LH_C2R2 & left_index_tap KEY_LH_C1R2 & trans & trans & trans & kp RIGHT_RING2_KEY & trans & trans & left_index_tap KEY_LH_C6R3 & none & LeftPinkyRing1 & LeftPinkyMiddy & LeftPinkyIndex & left_index_tap KEY_LH_C1R3 & RightPlainKey & kp RIGHT_INDEX_KEY & kp RIGHT_MIDDY_KEY & kp RIGHT_RING1_KEY & kp RIGHT_PINKY_KEY & trans & left_index_tap KEY_LH_C6R4 & left_index_tap KEY_LH_C5R4 & left_index_tap KEY_LH_C4R4 & left_index_tap KEY_LH_C3R4 & left_index_tap KEY_LH_C2R4 & left_index_tap KEY_LH_C1R4 & trans & trans & trans & trans & trans & trans & trans & trans & trans & trans & trans & trans>;
+ &left_index_tap KEY_LH_C6R1  &left_index_tap KEY_LH_C5R1  &left_index_tap KEY_LH_C4R1  &left_index_tap KEY_LH_C3R1  &left_index_tap KEY_LH_C2R1  &left_index_tap KEY_LH_C1R1                                                          &trans               &trans               &trans               &trans               &trans  &trans
+ &left_index_tap KEY_LH_C6R2  &left_index_tap KEY_LH_C5R2              &LeftPinkyRing2  &left_index_tap KEY_LH_C3R2  &left_index_tap KEY_LH_C2R2  &left_index_tap KEY_LH_C1R2                                                          &trans               &trans               &trans  &kp RIGHT_RING2_KEY               &trans  &trans
+ &left_index_tap KEY_LH_C6R3                        &none              &LeftPinkyRing1              &LeftPinkyMiddy              &LeftPinkyIndex  &left_index_tap KEY_LH_C1R3                                                  &RightPlainKey  &kp RIGHT_INDEX_KEY  &kp RIGHT_MIDDY_KEY  &kp RIGHT_RING1_KEY  &kp RIGHT_PINKY_KEY  &trans
+ &left_index_tap KEY_LH_C6R4  &left_index_tap KEY_LH_C5R4  &left_index_tap KEY_LH_C4R4  &left_index_tap KEY_LH_C3R4  &left_index_tap KEY_LH_C2R4  &left_index_tap KEY_LH_C1R4                                                          &trans               &trans               &trans               &trans               &trans  &trans
+                                                                                                                                                                               &trans  &trans  &trans  &trans  &trans  &trans                                                                                                            
+            >;
         };
 
-        layer_RightPinky
-        {
+        layer_RightPinky {
             bindings = <
-                &trans & trans & trans & trans & trans & trans & right_pinky_tap KEY_RH_C1R1 & right_pinky_tap KEY_RH_C2R1 & right_pinky_tap KEY_RH_C3R1 & right_pinky_tap KEY_RH_C4R1 & right_pinky_tap KEY_RH_C5R1 & right_pinky_tap KEY_RH_C6R1 & trans & trans & kp LEFT_RING2_KEY & trans & trans & trans & right_pinky_tap KEY_RH_C1R2 & right_pinky_tap KEY_RH_C2R2 & right_pinky_tap KEY_RH_C3R2 & RightPinkyRing2 & right_pinky_tap KEY_RH_C5R2 & right_pinky_tap KEY_RH_C6R2 & trans & kp LEFT_PINKY_KEY & kp LEFT_RING1_KEY & kp LEFT_MIDDY_KEY & kp LEFT_INDEX_KEY & LeftPlainKey & right_pinky_tap KEY_RH_C1R3 & RightPinkyIndex & RightPinkyMiddy & RightPinkyRing1 & none & right_pinky_tap KEY_RH_C6R3 & trans & trans & trans & trans & trans & trans & right_pinky_tap KEY_RH_C1R4 & right_pinky_tap KEY_RH_C2R4 & right_pinky_tap KEY_RH_C3R4 & right_pinky_tap KEY_RH_C4R4 & right_pinky_tap KEY_RH_C5R4 & right_pinky_tap KEY_RH_C6R4 & trans & trans & trans & trans & trans & trans>;
+ &trans              &trans              &trans              &trans              &trans         &trans                                                  &right_pinky_tap KEY_RH_C1R1  &right_pinky_tap KEY_RH_C2R1  &right_pinky_tap KEY_RH_C3R1  &right_pinky_tap KEY_RH_C4R1  &right_pinky_tap KEY_RH_C5R1  &right_pinky_tap KEY_RH_C6R1
+ &trans              &trans  &kp LEFT_RING2_KEY              &trans              &trans         &trans                                                  &right_pinky_tap KEY_RH_C1R2  &right_pinky_tap KEY_RH_C2R2  &right_pinky_tap KEY_RH_C3R2              &RightPinkyRing2  &right_pinky_tap KEY_RH_C5R2  &right_pinky_tap KEY_RH_C6R2
+ &trans  &kp LEFT_PINKY_KEY  &kp LEFT_RING1_KEY  &kp LEFT_MIDDY_KEY  &kp LEFT_INDEX_KEY  &LeftPlainKey                                                  &right_pinky_tap KEY_RH_C1R3              &RightPinkyIndex              &RightPinkyMiddy              &RightPinkyRing1                         &none  &right_pinky_tap KEY_RH_C6R3
+ &trans              &trans              &trans              &trans              &trans         &trans                                                  &right_pinky_tap KEY_RH_C1R4  &right_pinky_tap KEY_RH_C2R4  &right_pinky_tap KEY_RH_C3R4  &right_pinky_tap KEY_RH_C4R4  &right_pinky_tap KEY_RH_C5R4  &right_pinky_tap KEY_RH_C6R4
+                                                                                                        &trans  &trans  &trans  &trans  &trans  &trans                                                                                                                                                                                    
+            >;
         };
 
-        layer_RightRing1
-        {
+        layer_RightRing1 {
             bindings = <
-                &trans & trans & trans & trans & trans & trans & right_ring1_tap KEY_RH_C1R1 & right_ring1_tap KEY_RH_C2R1 & right_ring1_tap KEY_RH_C3R1 & right_ring1_tap KEY_RH_C4R1 & right_ring1_tap KEY_RH_C5R1 & right_ring1_tap KEY_RH_C6R1 & trans & trans & kp LEFT_RING2_KEY & trans & trans & trans & right_ring1_tap KEY_RH_C1R2 & right_ring1_tap KEY_RH_C2R2 & right_ring1_tap KEY_RH_C3R2 & RightPinkyRing2 & right_ring1_tap KEY_RH_C5R2 & right_ring1_tap KEY_RH_C6R2 & trans & kp LEFT_PINKY_KEY & kp LEFT_RING1_KEY & kp LEFT_MIDDY_KEY & kp LEFT_INDEX_KEY & LeftPlainKey & right_ring1_tap KEY_RH_C1R3 & RightPinkyIndex & RightPinkyMiddy & RightPinkyRing1 & none & right_ring1_tap KEY_RH_C6R3 & trans & trans & trans & trans & trans & trans & right_ring1_tap KEY_RH_C1R4 & right_ring1_tap KEY_RH_C2R4 & right_ring1_tap KEY_RH_C3R4 & right_ring1_tap KEY_RH_C4R4 & right_ring1_tap KEY_RH_C5R4 & right_ring1_tap KEY_RH_C6R4 & trans & trans & trans & trans & trans & trans>;
+ &trans              &trans              &trans              &trans              &trans         &trans                                                  &right_ring1_tap KEY_RH_C1R1  &right_ring1_tap KEY_RH_C2R1  &right_ring1_tap KEY_RH_C3R1  &right_ring1_tap KEY_RH_C4R1  &right_ring1_tap KEY_RH_C5R1  &right_ring1_tap KEY_RH_C6R1
+ &trans              &trans  &kp LEFT_RING2_KEY              &trans              &trans         &trans                                                  &right_ring1_tap KEY_RH_C1R2  &right_ring1_tap KEY_RH_C2R2  &right_ring1_tap KEY_RH_C3R2              &RightPinkyRing2  &right_ring1_tap KEY_RH_C5R2  &right_ring1_tap KEY_RH_C6R2
+ &trans  &kp LEFT_PINKY_KEY  &kp LEFT_RING1_KEY  &kp LEFT_MIDDY_KEY  &kp LEFT_INDEX_KEY  &LeftPlainKey                                                  &right_ring1_tap KEY_RH_C1R3              &RightPinkyIndex              &RightPinkyMiddy              &RightPinkyRing1                         &none  &right_ring1_tap KEY_RH_C6R3
+ &trans              &trans              &trans              &trans              &trans         &trans                                                  &right_ring1_tap KEY_RH_C1R4  &right_ring1_tap KEY_RH_C2R4  &right_ring1_tap KEY_RH_C3R4  &right_ring1_tap KEY_RH_C4R4  &right_ring1_tap KEY_RH_C5R4  &right_ring1_tap KEY_RH_C6R4
+                                                                                                        &trans  &trans  &trans  &trans  &trans  &trans                                                                                                                                                                                    
+            >;
         };
 
-        layer_RightRing2
-        {
+        layer_RightRing2 {
             bindings = <
-                &trans & trans & trans & trans & trans & trans & right_ring2_tap KEY_RH_C1R1 & right_ring2_tap KEY_RH_C2R1 & right_ring2_tap KEY_RH_C3R1 & right_ring2_tap KEY_RH_C4R1 & right_ring2_tap KEY_RH_C5R1 & right_ring2_tap KEY_RH_C6R1 & trans & trans & kp LEFT_RING2_KEY & trans & trans & trans & right_ring2_tap KEY_RH_C1R2 & right_ring2_tap KEY_RH_C2R2 & right_ring2_tap KEY_RH_C3R2 & RightPinkyRing2 & right_ring2_tap KEY_RH_C5R2 & right_ring2_tap KEY_RH_C6R2 & trans & kp LEFT_PINKY_KEY & kp LEFT_RING1_KEY & kp LEFT_MIDDY_KEY & kp LEFT_INDEX_KEY & LeftPlainKey & right_ring2_tap KEY_RH_C1R3 & RightPinkyIndex & RightPinkyMiddy & RightPinkyRing1 & none & right_ring2_tap KEY_RH_C6R3 & trans & trans & trans & trans & trans & trans & right_ring2_tap KEY_RH_C1R4 & right_ring2_tap KEY_RH_C2R4 & right_ring2_tap KEY_RH_C3R4 & right_ring2_tap KEY_RH_C4R4 & right_ring2_tap KEY_RH_C5R4 & right_ring2_tap KEY_RH_C6R4 & trans & trans & trans & trans & trans & trans>;
+ &trans              &trans              &trans              &trans              &trans         &trans                                                  &right_ring2_tap KEY_RH_C1R1  &right_ring2_tap KEY_RH_C2R1  &right_ring2_tap KEY_RH_C3R1  &right_ring2_tap KEY_RH_C4R1  &right_ring2_tap KEY_RH_C5R1  &right_ring2_tap KEY_RH_C6R1
+ &trans              &trans  &kp LEFT_RING2_KEY              &trans              &trans         &trans                                                  &right_ring2_tap KEY_RH_C1R2  &right_ring2_tap KEY_RH_C2R2  &right_ring2_tap KEY_RH_C3R2              &RightPinkyRing2  &right_ring2_tap KEY_RH_C5R2  &right_ring2_tap KEY_RH_C6R2
+ &trans  &kp LEFT_PINKY_KEY  &kp LEFT_RING1_KEY  &kp LEFT_MIDDY_KEY  &kp LEFT_INDEX_KEY  &LeftPlainKey                                                  &right_ring2_tap KEY_RH_C1R3              &RightPinkyIndex              &RightPinkyMiddy              &RightPinkyRing1                         &none  &right_ring2_tap KEY_RH_C6R3
+ &trans              &trans              &trans              &trans              &trans         &trans                                                  &right_ring2_tap KEY_RH_C1R4  &right_ring2_tap KEY_RH_C2R4  &right_ring2_tap KEY_RH_C3R4  &right_ring2_tap KEY_RH_C4R4  &right_ring2_tap KEY_RH_C5R4  &right_ring2_tap KEY_RH_C6R4
+                                                                                                        &trans  &trans  &trans  &trans  &trans  &trans                                                                                                                                                                                    
+            >;
         };
 
-        layer_RightMiddy
-        {
+        layer_RightMiddy {
             bindings = <
-                &trans & trans & trans & trans & trans & trans & right_middy_tap KEY_RH_C1R1 & right_middy_tap KEY_RH_C2R1 & right_middy_tap KEY_RH_C3R1 & right_middy_tap KEY_RH_C4R1 & right_middy_tap KEY_RH_C5R1 & right_middy_tap KEY_RH_C6R1 & trans & trans & kp LEFT_RING2_KEY & trans & trans & trans & right_middy_tap KEY_RH_C1R2 & right_middy_tap KEY_RH_C2R2 & right_middy_tap KEY_RH_C3R2 & RightPinkyRing2 & right_middy_tap KEY_RH_C5R2 & right_middy_tap KEY_RH_C6R2 & trans & kp LEFT_PINKY_KEY & kp LEFT_RING1_KEY & kp LEFT_MIDDY_KEY & kp LEFT_INDEX_KEY & LeftPlainKey & right_middy_tap KEY_RH_C1R3 & RightPinkyIndex & RightPinkyMiddy & RightPinkyRing1 & none & right_middy_tap KEY_RH_C6R3 & trans & trans & trans & trans & trans & trans & right_middy_tap KEY_RH_C1R4 & right_middy_tap KEY_RH_C2R4 & right_middy_tap KEY_RH_C3R4 & right_middy_tap KEY_RH_C4R4 & right_middy_tap KEY_RH_C5R4 & right_middy_tap KEY_RH_C6R4 & trans & trans & trans & trans & trans & trans>;
+ &trans              &trans              &trans              &trans              &trans         &trans                                                  &right_middy_tap KEY_RH_C1R1  &right_middy_tap KEY_RH_C2R1  &right_middy_tap KEY_RH_C3R1  &right_middy_tap KEY_RH_C4R1  &right_middy_tap KEY_RH_C5R1  &right_middy_tap KEY_RH_C6R1
+ &trans              &trans  &kp LEFT_RING2_KEY              &trans              &trans         &trans                                                  &right_middy_tap KEY_RH_C1R2  &right_middy_tap KEY_RH_C2R2  &right_middy_tap KEY_RH_C3R2              &RightPinkyRing2  &right_middy_tap KEY_RH_C5R2  &right_middy_tap KEY_RH_C6R2
+ &trans  &kp LEFT_PINKY_KEY  &kp LEFT_RING1_KEY  &kp LEFT_MIDDY_KEY  &kp LEFT_INDEX_KEY  &LeftPlainKey                                                  &right_middy_tap KEY_RH_C1R3              &RightPinkyIndex              &RightPinkyMiddy              &RightPinkyRing1                         &none  &right_middy_tap KEY_RH_C6R3
+ &trans              &trans              &trans              &trans              &trans         &trans                                                  &right_middy_tap KEY_RH_C1R4  &right_middy_tap KEY_RH_C2R4  &right_middy_tap KEY_RH_C3R4  &right_middy_tap KEY_RH_C4R4  &right_middy_tap KEY_RH_C5R4  &right_middy_tap KEY_RH_C6R4
+                                                                                                        &trans  &trans  &trans  &trans  &trans  &trans                                                                                                                                                                                    
+            >;
         };
 
-        layer_RightIndex
-        {
+        layer_RightIndex {
             bindings = <
-                &trans & trans & trans & trans & trans & trans & right_index_tap KEY_RH_C1R1 & right_index_tap KEY_RH_C2R1 & right_index_tap KEY_RH_C3R1 & right_index_tap KEY_RH_C4R1 & right_index_tap KEY_RH_C5R1 & right_index_tap KEY_RH_C6R1 & trans & trans & kp LEFT_RING2_KEY & trans & trans & trans & right_index_tap KEY_RH_C1R2 & right_index_tap KEY_RH_C2R2 & right_index_tap KEY_RH_C3R2 & RightPinkyRing2 & right_index_tap KEY_RH_C5R2 & right_index_tap KEY_RH_C6R2 & trans & kp LEFT_PINKY_KEY & kp LEFT_RING1_KEY & kp LEFT_MIDDY_KEY & kp LEFT_INDEX_KEY & LeftPlainKey & right_index_tap KEY_RH_C1R3 & RightPinkyIndex & RightPinkyMiddy & RightPinkyRing1 & none & right_index_tap KEY_RH_C6R3 & trans & trans & trans & trans & trans & trans & right_index_tap KEY_RH_C1R4 & right_index_tap KEY_RH_C2R4 & right_index_tap KEY_RH_C3R4 & right_index_tap KEY_RH_C4R4 & right_index_tap KEY_RH_C5R4 & right_index_tap KEY_RH_C6R4 & trans & trans & trans & trans & trans & trans>;
+ &trans              &trans              &trans              &trans              &trans         &trans                                                  &right_index_tap KEY_RH_C1R1  &right_index_tap KEY_RH_C2R1  &right_index_tap KEY_RH_C3R1  &right_index_tap KEY_RH_C4R1  &right_index_tap KEY_RH_C5R1  &right_index_tap KEY_RH_C6R1
+ &trans              &trans  &kp LEFT_RING2_KEY              &trans              &trans         &trans                                                  &right_index_tap KEY_RH_C1R2  &right_index_tap KEY_RH_C2R2  &right_index_tap KEY_RH_C3R2              &RightPinkyRing2  &right_index_tap KEY_RH_C5R2  &right_index_tap KEY_RH_C6R2
+ &trans  &kp LEFT_PINKY_KEY  &kp LEFT_RING1_KEY  &kp LEFT_MIDDY_KEY  &kp LEFT_INDEX_KEY  &LeftPlainKey                                                  &right_index_tap KEY_RH_C1R3              &RightPinkyIndex              &RightPinkyMiddy              &RightPinkyRing1                         &none  &right_index_tap KEY_RH_C6R3
+ &trans              &trans              &trans              &trans              &trans         &trans                                                  &right_index_tap KEY_RH_C1R4  &right_index_tap KEY_RH_C2R4  &right_index_tap KEY_RH_C3R4  &right_index_tap KEY_RH_C4R4  &right_index_tap KEY_RH_C5R4  &right_index_tap KEY_RH_C6R4
+                                                                                                        &trans  &trans  &trans  &trans  &trans  &trans                                                                                                                                                                                    
+            >;
+        };
+        
+        layer_Cursor {
+            bindings = <
+        // +-----------------------------------------------------------+     +-----------------------------------------------------------+
+        // |         |         |         |         |         |         |     |         |         |         |         |         |         |
+              &none     &none     &none     &none     &none     &none           &none     &none     &none     &none     &none     &none   
+        // +-----------------------------------------------------------+     +-----------------------------------------------------------+
+        // |         |         |         |         |         |         |     |         |         |         |         |         |         |
+              &none     &none     &none     &none     &none     &none           &none     &none     &none     &none     &none     &none   
+        // +-----------------------------------------------------------+     +-----------------------------------------------------------+
+        // |         |         |         |         |         |         |     |         |         |         |         |         |         |
+              &none     &none     &none     &none     &none     &none           &none     &none     &none     &none     &none     &none   
+        // +-----------------------------------------------------------+     +-----------------------------------------------------------+
+        // |         |         |         |         |         |         |     |         |         |         |         |         |         |
+              &none     &none     &none     &none     &none     &none           &none     &none     &none     &none     &none     &none   
+        // +-----------------------------------------------------------+     +-----------------------------------------------------------+
+        // |                             |         |         |         |     |         |         |         |                             |
+                                            &none     &none     &none           &none     &none     &none                                 
+        // +-----------------------------------------------------------+     +-----------------------------------------------------------+
+            >;
         };
 
-        layer_Cursor
-        {
+        layer_Number {
             bindings = <
-                // +-----------------------------------------------------------+     +-----------------------------------------------------------+
-                // |         |         |         |         |         |         |     |         |         |         |         |         |         |
-                &none & none & none & none & none & none & none & none & none & none & none & none
-                // +-----------------------------------------------------------+     +-----------------------------------------------------------+
-                // |         |         |         |         |         |         |     |         |         |         |         |         |         |
-                & none & none & none & none & none & none & none & none & none & none & none & none
-                // +-----------------------------------------------------------+     +-----------------------------------------------------------+
-                // |         |         |         |         |         |         |     |         |         |         |         |         |         |
-                & none & none & none & none & none & none & none & none & none & none & none & none
-                // +-----------------------------------------------------------+     +-----------------------------------------------------------+
-                // |         |         |         |         |         |         |     |         |         |         |         |         |         |
-                & none & none & none & none & none & none & none & none & none & none & none & none
-                // +-----------------------------------------------------------+     +-----------------------------------------------------------+
-                // |                             |         |         |         |     |         |         |         |                             |
-                & none & none & none & none & none & none
-                // +-----------------------------------------------------------+     +-----------------------------------------------------------+
-                >;
+        // +-----------------------------------------------------------+     +-----------------------------------------------------------+
+        // |         |         |         |         |         |         |     |         |         |         |         |         |         |
+              &none     &none     &none     &none     &none     &none           &none     &none     &none     &none     &none     &none   
+        // +-----------------------------------------------------------+     +-----------------------------------------------------------+
+        // |         |         |         |         |         |         |     |         |         |         |         |         |         |
+              &none     &none     &none     &none     &none     &none           &none     &none     &none     &none     &none     &none   
+        // +-----------------------------------------------------------+     +-----------------------------------------------------------+
+        // |         |         |         |         |         |         |     |         |         |         |         |         |         |
+              &none     &none     &none     &none     &none     &none           &none     &none     &none     &none     &none     &none   
+        // +-----------------------------------------------------------+     +-----------------------------------------------------------+
+        // |         |         |         |         |         |         |     |         |         |         |         |         |         |
+              &none     &none     &none     &none     &none     &none           &none     &none     &none     &none     &none     &none   
+        // +-----------------------------------------------------------+     +-----------------------------------------------------------+
+        // |                             |         |         |         |     |         |         |         |                             |
+                                            &none     &none     &none           &none     &none     &none                                 
+        // +-----------------------------------------------------------+     +-----------------------------------------------------------+
+            >;
         };
-
-        layer_Number
-        {
+        layer_Function {
             bindings = <
-                // +-----------------------------------------------------------+     +-----------------------------------------------------------+
-                // |         |         |         |         |         |         |     |         |         |         |         |         |         |
-                &none & none & none & none & none & none & none & none & none & none & none & none
-                // +-----------------------------------------------------------+     +-----------------------------------------------------------+
-                // |         |         |         |         |         |         |     |         |         |         |         |         |         |
-                & none & none & none & none & none & none & none & none & none & none & none & none
-                // +-----------------------------------------------------------+     +-----------------------------------------------------------+
-                // |         |         |         |         |         |         |     |         |         |         |         |         |         |
-                & none & none & none & none & none & none & none & none & none & none & none & none
-                // +-----------------------------------------------------------+     +-----------------------------------------------------------+
-                // |         |         |         |         |         |         |     |         |         |         |         |         |         |
-                & none & none & none & none & none & none & none & none & none & none & none & none
-                // +-----------------------------------------------------------+     +-----------------------------------------------------------+
-                // |                             |         |         |         |     |         |         |         |                             |
-                & none & none & none & none & none & none
-                // +-----------------------------------------------------------+     +-----------------------------------------------------------+
-                >;
-        };
-        layer_Function
-        {
-            bindings = <
-                // +-----------------------------------------------------------+     +-----------------------------------------------------------+
-                // |         |         |         |         |         |         |     |         |         |         |         |         |         |
-                &none & none & none & none & none & none & none & none & none & none & none & none
-                // +-----------------------------------------------------------+     +-----------------------------------------------------------+
-                // |         |         |         |         |         |         |     |         |         |         |         |         |         |
-                & none & none & none & none & none & none & none & none & none & none & none & none
-                // +-----------------------------------------------------------+     +-----------------------------------------------------------+
-                // |         |         |         |         |         |         |     |         |         |         |         |         |         |
-                & none & none & none & none & none & none & none & none & none & none & none & none
-                // +-----------------------------------------------------------+     +-----------------------------------------------------------+
-                // |         |         |         |         |         |         |     |         |         |         |         |         |         |
-                & none & none & none & none & none & none & none & none & none & none & none & none
-                // +-----------------------------------------------------------+     +-----------------------------------------------------------+
-                // |                             |         |         |         |     |         |         |         |                             |
-                & none & none & none & none & none & none
-                // +-----------------------------------------------------------+     +-----------------------------------------------------------+
-                >;
+        // +-----------------------------------------------------------+     +-----------------------------------------------------------+
+        // |         |         |         |         |         |         |     |         |         |         |         |         |         |
+              &none     &none     &none     &none     &none     &none           &none     &none     &none     &none     &none     &none   
+        // +-----------------------------------------------------------+     +-----------------------------------------------------------+
+        // |         |         |         |         |         |         |     |         |         |         |         |         |         |
+              &none     &none     &none     &none     &none     &none           &none     &none     &none     &none     &none     &none   
+        // +-----------------------------------------------------------+     +-----------------------------------------------------------+
+        // |         |         |         |         |         |         |     |         |         |         |         |         |         |
+              &none     &none     &none     &none     &none     &none           &none     &none     &none     &none     &none     &none   
+        // +-----------------------------------------------------------+     +-----------------------------------------------------------+
+        // |         |         |         |         |         |         |     |         |         |         |         |         |         |
+              &none     &none     &none     &none     &none     &none           &none     &none     &none     &none     &none     &none   
+        // +-----------------------------------------------------------+     +-----------------------------------------------------------+
+        // |                             |         |         |         |     |         |         |         |                             |
+                                            &none     &none     &none           &none     &none     &none                                 
+        // +-----------------------------------------------------------+     +-----------------------------------------------------------+
+            >;
         };
         layer_Symbol
         {
             bindings = <
-                // +-----------------------------------------------------------+     +-----------------------------------------------------------+
-                // |         |    `    |    (    |     )   |    ;    |    ,    |     |         |         |         |         |         |         |
-                &none & kp GRAVE & kp LS(N9) & kp LS(N0) & kp SEMI & kp COMMA & none & none & none & none & none & none
-                // +-----------------------------------------------------------+     +-----------------------------------------------------------+
-                // |    !    |   [/{   |    '    |     "   |   ]/}   |     ?   |     |    ;    |         |         |         |         |         |
-                & kp LS(N1) & kp LBKT & kp SQT & kp DQT & kp RBKT & kp QMARK & kp SEMI & none & none & none & none & none
-                // +-----------------------------------------------------------+     +-----------------------------------------------------------+
-                // |    #    |    ^    |    =    |    -    |    $    |    *    |     |         |         |         |         |         |         |
-                & kp LS(N3) & kp LS(N6) & kp EQUAL & kp LS(MINUS) & kp LS(N4) & kp LS(N8) & none & none & none & none & none & none
-                // +-----------------------------------------------------------+     +-----------------------------------------------------------+
-                // |    @    |         |         |         |         |         |     |         |         |         |         |         |         |
-                & kp LS(N2) & none & none & none & none & none & none & none & none & none & none & none
-                // +-----------------------------------------------------------+     +-----------------------------------------------------------+
-                // |                             |         |         |         |     |         |         |         |                             |
-                & none & none & none & none & none & none
-                // +-----------------------------------------------------------+     +-----------------------------------------------------------+
+        // +-----------------------------------------------------------+     +-----------------------------------------------------------+
+        // |         |   `/~   |    (    |     )   |    ;    |    ,    |     |         |         |         |         |         |         |
+            &none      &kp GRAVE &kp LPAR  &kp RPAR  &kp SEMI  &kp COMMA       &none     &none      &none     &none     &none     &none
+        // +-----------------------------------------------------------+     +-----------------------------------------------------------+
+        // |    !    |   [/{   |    '    |     "   |   ]/}   |     ?   |     |    .    |         |         |         |         |         |
+            &kp EXCL  &kp LBKT  &kp SQT   &kp DQT   &kp RBKT  &kp QMARK       &kp KP_DOT  &none      &none     &none      &none    &none
+        // +-----------------------------------------------------------+     +-----------------------------------------------------------+
+        // |    #    |    ^    |    =    |    -    |    $    |    *    |     |    ,    | Bck     |  tab    | space   |  enter  |   ```   |
+            &kp HASH  &kp CARET &kp EQUAL &kp UNDER &kp DOLLAR &kp STAR       &kp COMMA &kp BACKSPACE &kp TAB &kp SPACE &kp ENTER &none // TODO: Change this
+        // +-----------------------------------------------------------+     +-----------------------------------------------------------+
+        // |    @    |    <    |   |     |    -    |    >    |    /    |     |    ;    |  shift  |    +    |    &    |         |         |
+        & kp LS(N2)   &kp LT    &kp PIPE  &kp MINUS &kp GT    &kp FSLH        &kp SEMI &kp LEFT_SHIFT &kp PLUS &kp AMPS & none & none
+        // +-----------------------------------------------------------+     +-----------------------------------------------------------+
+        // |                             |   \     |    %    |    :    |     |         |         |         |                             |
+                                          &kp BSLH  &kp PERCENT &kp COLON     & none     & none     & none
+        // +-----------------------------------------------------------+     +-----------------------------------------------------------+
                 >;
         };
 
-        layer_Magic
-        {
+        layer_Magic {
             bindings = <
-                // +-----------------------------------------------------------+     +-----------------------------------------------------------+
-                // |         |         |         |         |         |         |     |         |         |         |         |         |         |
-                &none & none & none & none & none & none & none & none & none & none & none & none
-                // +-----------------------------------------------------------+     +-----------------------------------------------------------+
-                // |         |         |         |         |         |         |     |         |         |         |         |         |         |
-                & none & none & none & bl_clr & bl_clra & none & none & none & bl_clr & bl_clra & none & none
-                // +-----------------------------------------------------------+     +-----------------------------------------------------------+
-                // |         |         |         |         |         |         |     |         |         |         |         |         |         |
-                & none & none & bt_3 & usb_out & none & none & none & bt_3 & none & none & none & none
-                // +-----------------------------------------------------------+     +-----------------------------------------------------------+
-                // |         |         |         |         |         |         |     |         |         |         |         |         |         |
-                & none & none & bt_0 & bt_1 & bt_2 & none & none & bt_0 & bt_1 & bt_2 & none & none
-                // +-----------------------------------------------------------+     +-----------------------------------------------------------+
-                // |                             |         |         |         |     |         |         |         |                             |
-                & none & none & none & none & usb_out & none
-                // +-----------------------------------------------------------+     +-----------------------------------------------------------+
-                >;
+        // +-----------------------------------------------------------+     +-----------------------------------------------------------+
+        // |         |         |         |         |         |         |     |         |         |         |         |         |         |
+              &none     &none     &none     &none     &none     &none           &none     &none     &none     &none     &none     &none   
+        // +-----------------------------------------------------------+     +-----------------------------------------------------------+
+        // |         |         |         |         |         |         |     |         |         |         |         |         |         |
+              &none     &none     &none    &bl_clr  &bl_clra    &none           &none     &none    &bl_clr  &bl_clra    &none     &none   
+        // +-----------------------------------------------------------+     +-----------------------------------------------------------+
+        // |         |         |         |         |         |         |     |         |         |         |         |         |         |
+              &none     &none     &bt_3   &usb_out    &none     &none           &none     &bt_3   &usb_out    &none     &none     &none   
+        // +-----------------------------------------------------------+     +-----------------------------------------------------------+
+        // |         |         |         |         |         |         |     |         |         |         |         |         |         |
+              &none     &none     &bt_0     &bt_1     &bt_2     &none           &none     &bt_0     &bt_1     &bt_2     &none     &none   
+        // +-----------------------------------------------------------+     +-----------------------------------------------------------+
+        // |                             |         |         |         |     |         |         |         |                             |
+                                            &none     &none     &none           &none     &none     &none                                 
+        // +-----------------------------------------------------------+     +-----------------------------------------------------------+
+            >;
         };
+
+
     };
+        
+
 };

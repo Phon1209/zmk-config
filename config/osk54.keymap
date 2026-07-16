@@ -311,6 +311,25 @@
 #define KEY_RH_T1 ENTER
 #endif
 
+#define _KP_N0 N0
+#define _KP_N1 N1
+#define _KP_N2 N2
+#define _KP_N3 N3
+#define _KP_N4 N4
+#define _KP_N5 N5
+#define _KP_N6 N6
+#define _KP_N7 N7
+#define _KP_N8 N8
+#define _KP_N9 N9
+#define _KP_PLUS PLUS
+#define _KP_MINUS MINUS
+#define _KP_ASTERISK ASTERISK
+#define _KP_SLASH SLASH
+#define _KP_COMMA COMMA
+#define _KP_DOT DOT
+#define _KP_EQUAL EQUAL
+#define _KP_ENTER ENTER
+
 
 combos {
     compatible = "zmk,combos";
@@ -3624,7 +3643,7 @@ macros {
             &kp LSHFT   &kp G     &kp X     &kp J     &kp K     &kp MINUS      &kp FSLH   &kp R     &kp M     &kp F     &kp P   &kp RSHFT
         // +-----------------------------------------------------------+     +-----------------------------------------------------------+
         // |                             |   ESC   |  BKSP    |  DEL   |     |  TAB    |  SPACE  |  ENTER  |                             |
-&thumb LAYER_Function ESC  &thumb LAYER_Cursor BACKSPACE  &thumb LAYER_Number DELETE        &thumb LAYER_Magic TAB  &space LAYER_Symbol SPACE   &kp RET       
+&thumb LAYER_Function DELETE  &thumb LAYER_Cursor BACKSPACE  &thumb LAYER_Number ESC        &thumb LAYER_Magic RET  &space LAYER_Symbol SPACE   &kp TAB       
         // +-----------------------------------------------------------+     +-----------------------------------------------------------+
             >;
         };
@@ -3756,18 +3775,18 @@ macros {
         // +-----------------------------------------------------------+     +-----------------------------------------------------------+
         // |         |         |         |         |         |         |     |         |         |         |         |         |         |
               &none     &none     &none     &none     &none     &none           &none     &none     &none     &none     &none     &none   
+        // +-----------------------------------------------------------+     ----------+-------------------------------------------------+
+        // |         |         | REDO    |   UNDO  |Backspace|  CUT    |     |  CUT    |Backspace|  UNDO   |  REDO   |         |         |
+              &none     &none   &kp _REDO &kp _UNDO  &kp BSPC  &kp _CUT        &kp _CUT  &kp BKSP   &kp _UNDO &kp _REDO  &none     &none   
+        // +-----------------------------------------------------------+     ----------+-------------------------------------------------+
+        // |         |  Win    |  Alt    |  Ctrl   | SHIFT   |  COPY   |     |  COPY   |  LEFT   |    UP   |   DOWN  |  RIGHT  |         |
+              &none &kp LEFT_PINKY_MOD  &kp LEFT_RING1_MOD  &kp LEFT_MIDDY_MOD  &kp LEFT_INDEX_MOD   &kp _COPY       &kp _COPY &kp LEFT   &kp UP    &kp DOWN &kp RIGHT   &none   
+        // +-----------------------------------------------------------+     ----------+-------------------------------------------------+
+        // |         |         |         |         |         |  PASTE  |     |  PASTE  |  HOME   |  PG_UP  | PG_DOWN |   END   |         |
+              &none     &none     &none     &none     &none   &kp _PASTE      &kp _PASTE&kp HOME  &kp PG_UP &kp PG_DN  &kp END    &none   
         // +-----------------------------------------------------------+     +-----------------------------------------------------------+
-        // |         |         |         |         |         |         |     |         |         |         |         |         |         |
-              &none     &none     &none     &none     &none     &none           &none     &none     &none     &none     &none     &none   
-        // +-----------------------------------------------------------+     +-----------------------------------------------------------+
-        // |         |         |         |         |         |         |     |         |         |         |         |         |         |
-              &none     &none     &none     &none     &none     &none           &none     &none     &none     &none     &none     &none   
-        // +-----------------------------------------------------------+     +-----------------------------------------------------------+
-        // |         |         |         |         |         |         |     |         |         |         |         |         |         |
-              &none     &none     &none     &none     &none     &none           &none     &none     &none     &none     &none     &none   
-        // +-----------------------------------------------------------+     +-----------------------------------------------------------+
-        // |                             |         |         |         |     |         |         |         |                             |
-                                            &none     &none     &none           &none     &none     &none                                 
+        // |                             |         |         |         |     | Ctrl A  | Slt Lne | Slt Wrd |                             |
+                                            &none     &none     &none         &kp _C(A)  &select_line  &select_word                                 
         // +-----------------------------------------------------------+     +-----------------------------------------------------------+
             >;
         };
@@ -3778,17 +3797,17 @@ macros {
         // |         |         |         |         |         |         |     |         |         |         |         |         |         |
               &none     &none     &none     &none     &none     &none           &none     &none     &none     &none     &none     &none   
         // +-----------------------------------------------------------+     +-----------------------------------------------------------+
-        // |         |         |         |         |         |         |     |         |         |         |         |         |         |
-              &none     &none     &none     &none     &none     &none           &none     &none     &none     &none     &none     &none   
+        // |         |         |         |         |         |         |     |         |    7    |    8    |    9    |         |         |
+              &none     &none     &none     &none     &none     &none           &none  &kp _KP_N7 &kp _KP_N8 &kp _KP_N9 &none     &none   
         // +-----------------------------------------------------------+     +-----------------------------------------------------------+
-        // |         |         |         |         |         |         |     |         |         |         |         |         |         |
-              &none     &none     &none     &none     &none     &none           &none     &none     &none     &none     &none     &none   
+        // |         |         |         |         |         |         |     |         |    4    |    5    |    6    |         |         |
+              &none     &none     &none     &none     &none     &none           &none  &kp _KP_N4 &kp _KP_N5 &kp _KP_N6 &none     &none   
         // +-----------------------------------------------------------+     +-----------------------------------------------------------+
-        // |         |         |         |         |         |         |     |         |         |         |         |         |         |
-              &none     &none     &none     &none     &none     &none           &none     &none     &none     &none     &none     &none   
+        // |         |         |         |         |         |         |     |         |    1    |    2    |    3    |         |         |
+              &none     &none     &none     &none     &none     &none           &none  &kp _KP_N1 &kp _KP_N2 &kp _KP_N3 &none     &none   
         // +-----------------------------------------------------------+     +-----------------------------------------------------------+
-        // |                             |         |         |         |     |         |         |         |                             |
-                                            &none     &none     &none           &none     &none     &none                                 
+        // |                             |         |         |         |     |         |    0    |         |                             |
+                                            &none     &none     &none           &none   &kp _KP_N0  &none                                 
         // +-----------------------------------------------------------+     +-----------------------------------------------------------+
             >;
         };
@@ -3798,14 +3817,14 @@ macros {
         // |         |         |         |         |         |         |     |         |         |         |         |         |         |
               &none     &none     &none     &none     &none     &none           &none     &none     &none     &none     &none     &none   
         // +-----------------------------------------------------------+     +-----------------------------------------------------------+
-        // |         |         |         |         |         |         |     |         |         |         |         |         |         |
-              &none     &none     &none     &none     &none     &none           &none     &none     &none     &none     &none     &none   
+        // |         |         |         |         |         |         |     |         |   F7    |   F8    |   F9    |   F10   |         |
+              &none     &none     &none     &none     &none     &none           &none     &kp F7    &kp F8    &kp F9    &kp F10   &none   
         // +-----------------------------------------------------------+     +-----------------------------------------------------------+
-        // |         |         |         |         |         |         |     |         |         |         |         |         |         |
-              &none     &none     &none     &none     &none     &none           &none     &none     &none     &none     &none     &none   
+        // |         |         |         |         |         |         |     |         |   F4    |   F5    |   F6    |   F11   |         |
+              &none     &none     &none     &none     &none     &none           &none     &kp F4    &kp F5    &kp F6    &kp F11   &none   
         // +-----------------------------------------------------------+     +-----------------------------------------------------------+
-        // |         |         |         |         |         |         |     |         |         |         |         |         |         |
-              &none     &none     &none     &none     &none     &none           &none     &none     &none     &none     &none     &none   
+        // |         |         |         |         |         |         |     |         |   F1    |   F2    |   F3    |   F12   |         |
+              &none     &none     &none     &none     &none     &none           &none     &kp F1    &kp F2    &kp F3    &kp F12   &none   
         // +-----------------------------------------------------------+     +-----------------------------------------------------------+
         // |                             |         |         |         |     |         |         |         |                             |
                                             &none     &none     &none           &none     &none     &none                                 

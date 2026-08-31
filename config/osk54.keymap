@@ -3628,7 +3628,7 @@ macros {
         // |  LSHIFT |   g     |   x     |   j     |   k     |   -     |     |   /     |   r     |   m     |   f     |   p     | RSHIFT  |
             &kp LSHFT   &kp G     &kp X     &kp J     &kp K     &kp MINUS      &kp FSLH   &kp R     &kp M     &kp F     &kp P   &kp RSHFT
         // +-----------------------------------------------------------+     +-----------------------------------------------------------+
-        // |                             |   ESC   |  BKSP    |  DEL   |     |  TAB    |  SPACE  |  ENTER  |                             |
+        // |                             |   DEL   |  BKSP   |   ESC   |     |  RET    |  SPACE  |  TAB    |                             |
 &thumb LAYER_Function DELETE  &thumb LAYER_Cursor BACKSPACE  &thumb LAYER_Number ESC        &thumb LAYER_Magic RET  &space LAYER_Symbol SPACE   &kp TAB       
         // +-----------------------------------------------------------+     +-----------------------------------------------------------+
             >;
@@ -3786,8 +3786,8 @@ macros {
         // |         |         |         |         |         |         |     |         |    7    |    8    |    9    |    -    |         |
               &none     &none     &none     &none     &none     &none           &none  &kp _KP_N7 &kp _KP_N8 &kp _KP_N9 &kp _KP_MINUS     &none   
         // +-----------------------------------------------------------+     +-----------------------------------------------------------+
-        // |         |         |         |         |         |         |     |         |    4    |    5    |    6    |    +    |         |
-              &none     &none     &none     &none     &none     &none           &none  &kp _KP_N4 &kp _KP_N5 &kp _KP_N6 &kp _KP_PLUS     &none   
+        // |         |  Win    |  Alt    |  Ctrl   | SHIFT   |         |     |         |    4    |    5    |    6    |    +    |         |
+              &none     &kp LEFT_PINKY_MOD  &kp LEFT_RING1_MOD  &kp LEFT_MIDDY_MOD  &kp LEFT_INDEX_MOD     &none           &none  &kp _KP_N4 &kp _KP_N5 &kp _KP_N6 &kp _KP_PLUS     &none   
         // +-----------------------------------------------------------+     +-----------------------------------------------------------+
         // |         |         |         |         |         |         |     |    +    |    1    |    2    |    3    |  ENTER  |         |
               &none     &none     &none     &none     &none     &none       &kp _KP_PLUS &kp _KP_N1 &kp _KP_N2 &kp _KP_N3 &kp RET     &none   

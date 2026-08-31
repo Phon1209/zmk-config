@@ -369,20 +369,6 @@ combos {
         key-positions = <11 47>;  // Top-right and bottom-right of the righthalf of the board
         bindings = <&bootloader>;
     };
-
-    magic_combo_toggle_left {
-        timeout-ms = <300>;
-        key-positions = <12 24>;
-        bindings = <&tog LAYER_Magic>;
-        layers = <LAYER_Engrammer LAYER_KEDMANEE_TH LAYER_Magic>;
-    };
-
-    magic_combo_toggle_right {
-        timeout-ms = <300>;
-        key-positions = <23 35>;
-        bindings = <&tog LAYER_Magic>;
-        layers = <LAYER_Engrammer LAYER_KEDMANEE_TH LAYER_Magic>;
-    };
 };
 
 behaviors {
